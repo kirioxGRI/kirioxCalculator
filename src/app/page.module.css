@@ -1,0 +1,57 @@
+.page {
+  position: relative;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.page::before {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(237, 75, 0, 0.14), transparent 22%),
+    linear-gradient(180deg, #fcfcfd 0%, #f2f3f4 56%, #eef0f2 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.page::after {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(2, 0, 53, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 0, 53, 0.03) 1px, transparent 1px);
+  background-size: 140px 140px;
+  content: "";
+  mask-image: radial-gradient(circle at center, black 30%, transparent 84%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  padding: 2.25rem 0 5rem;
+}
+
+.sectionStack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-top: 3rem;
+  }
+
+  .sectionStack {
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main {
+    padding-bottom: 6rem;
+  }
+}

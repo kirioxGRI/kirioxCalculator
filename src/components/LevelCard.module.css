@@ -1,0 +1,160 @@
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid rgba(2, 0, 53, 0.08);
+  border-radius: 1.15rem;
+  background: #ffffff;
+  color: var(--foreground);
+  cursor: pointer;
+  padding: 0.95rem 1rem;
+  text-align: left;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease,
+    background-color 160ms ease;
+}
+
+.card:hover {
+  border-color: rgba(2, 0, 53, 0.16);
+  box-shadow: 0 10px 22px rgba(2, 0, 53, 0.06);
+}
+
+.simple {
+  background: #ffffff;
+}
+
+.transitional {
+  background: #fffaf7;
+}
+
+.structural {
+  background: #fff7f3;
+}
+
+.active {
+  border-color: rgba(237, 75, 0, 0.45);
+  box-shadow: 0 14px 26px rgba(237, 75, 0, 0.12);
+}
+
+.active::before {
+  position: absolute;
+  left: 0;
+  top: 0.85rem;
+  bottom: 0.85rem;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+}
+
+.leading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.levelBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(2, 0, 53, 0.08);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.main {
+  min-width: 0;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.title,
+.summary {
+  margin: 0;
+}
+
+.title {
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+}
+
+.category {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  color: var(--soft-ink);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-top: 0.12rem;
+}
+
+.summary {
+  margin-top: 0.3rem;
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.trailing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 0 0 auto;
+}
+
+.iconWrap,
+.checkWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+}
+
+.iconWrap {
+  background: rgba(237, 75, 0, 0.1);
+  color: var(--accent);
+}
+
+.checkWrap {
+  border: 1px solid rgba(2, 0, 53, 0.08);
+  color: transparent;
+}
+
+.active .checkWrap {
+  border-color: rgba(237, 75, 0, 0.28);
+  background: var(--accent);
+  color: #fff7f3;
+}
+
+@media (max-width: 760px) {
+  .header {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .category {
+    padding-top: 0;
+  }
+}

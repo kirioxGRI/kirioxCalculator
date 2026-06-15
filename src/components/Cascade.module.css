@@ -1,0 +1,100 @@
+.wrap {
+  display: grid;
+  gap: 0.6rem;
+  border: 1px solid rgba(2, 0, 53, 0.08);
+  border-radius: 1.1rem;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(237, 75, 0, 0.06), transparent 60%),
+    #fbfbfc;
+  padding: 0.85rem 0.85rem 0.7rem;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Aristas */
+.edge {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 1.5;
+}
+
+.edgeIdle {
+  stroke: rgba(2, 0, 53, 0.18);
+}
+
+.edgeActive {
+  stroke: rgba(2, 0, 53, 0.3);
+}
+
+.edgeCritical {
+  stroke: rgba(237, 75, 0, 0.55);
+  stroke-width: 2;
+}
+
+/* Pulso viajero (cascada) */
+.pulse {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 4px rgba(237, 75, 0, 0.7));
+}
+
+/* Anillo de propagación */
+.ring {
+  fill: none;
+  stroke: rgba(237, 75, 0, 0.5);
+  stroke-width: 1.4;
+}
+
+/* Nodos */
+.node {
+  stroke: #ffffff;
+  stroke-width: 1.5;
+}
+
+.nodeIdle {
+  fill: rgba(2, 0, 53, 0.22);
+}
+
+.nodeActive {
+  fill: var(--foreground);
+}
+
+.nodeRisk {
+  fill: var(--accent);
+}
+
+/* Leyenda */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--soft-ink);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dotInk,
+.dotAccent {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+}
+
+.dotInk {
+  background: var(--foreground);
+}
+
+.dotAccent {
+  background: var(--accent);
+}
